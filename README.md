@@ -76,6 +76,8 @@ backend/
       ...
   prisma/
   supabase/
+  terraform/ # Terraform code for AWS infrastructure
+  scripts/   # Deploy scripts & docker swarm yml for EC2 instance
   README.md
 frontend/
   lib/
