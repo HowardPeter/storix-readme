@@ -3,10 +3,12 @@
 **Smart Retail Store Assistant (Storix)** is a mobile-first inventory platform for small and medium retail stores.
 
 > **Note:** This is an overview README for the project. The source code is not publicly available as this is a closed-source project.
+>
+> <p align="center"><img src="images/private_repo.png" alt="Private Repository" /></p>
 
 > **Coming Soon:** The app is currently being published to the Google Play Store. We will keep this page updated with the latest news.
 >
-> <p align="center"><img src="images/ch_play.jpg" width="30%" alt="Google Play Store" /></p>
+> <p align="center"><img src="images/ch_play.jpg" width="40%" alt="Google Play Store" /></p>
 
 ## Screenshots
 
@@ -18,16 +20,6 @@
   <img src="images/z7784868414634_b3e07daf49d89d39f8cecb3bdde28348.jpg" width="25%" alt="Notifications" />
   <img src="images/z7784868418490_c52578dc8e32ef925456c5651567cfb1.jpg" width="25%" alt="Chatbot Assistant" />
 </p>
-
-## Key Features
-
-- Inventory management for import, export, stock adjustment, threshold tracking, and stock health visibility.
-- Product and category management with support for product variants/packages, pricing, images, and unit-level inventory.
-- Barcode-assisted workflows for searching products, attaching barcodes to packages, and accelerating transaction entry.
-- Automated notifications for low-stock events using event-driven checks and scheduled background scans.
-- Inventory insight and reporting screens for stock status, transaction history, and operational overview.
-- Push notification support using Firebase Admin on the backend and Firebase Messaging on the mobile client.
-- Chatbot-ready mobile UI for future AI-assisted inventory queries and operational guidance.
 
 ## Tech Stack
 
@@ -56,15 +48,27 @@
 ## Project Structure
 
 ```text
+.github/
+  actions/          # Reusable composite GitHub Actions
+  ISSUE_TEMPLATE/   # GitHub issue templates
+  workflows/        # CI/CD pipeline definitions
 backend/
   src/
-    common/
+    common/         # Shared utilities, guards, interceptors, and base classes
     config/
-    cron/
-    db/
-    generated/
+    cron/           # Scheduled background jobs (e.g. low-stock scans)
+    db/             # Database client initialization and helpers
+    generated/      # Prisma generated support types in typescript
     modules/
       auth/
+        controllers/    # Request handlers for auth endpoints
+        modules/        # Feature module definitions and dependency wiring
+        repositories/   # Database access layer for auth entities
+        routes/         # Auth route registration
+        services/       # Business logic for authentication and authorization
+        dtos/           # Data transfer objects for request/response validation
+        types/          # TypeScript types and interfaces for auth domain
+        validators/     # Input validation schemas and rules
       stores/
       categories/
       products/
@@ -74,19 +78,24 @@ backend/
       notification/
       search/
       ...
-  prisma/
-  supabase/
-  terraform/ # Terraform code for AWS infrastructure
-  scripts/   # Deploy scripts & docker swarm yml for EC2 instance
+  prisma/           # Prisma schema and migration files
+  supabase/         # Supabase local config and storage setup
+  terraform/        # Terraform code for AWS infrastructure
+  scripts/          # Deploy scripts & docker swarm yml for EC2 instance
   README.md
 frontend/
   lib/
     core/
-      infrastructure/
-      state/
-      ui/
-    features/
+      infrastructure/ # API clients, storage adapters, and service integrations
+      state/          # Global state management providers
+      ui/             # Shared widgets, themes, and design system components
+    features/         # Independent UI features
       auth/
+        bindings/               # Dependencie inject
+        controllers/            # Handle screen logic
+        models/                 # Private models
+        providers/              # Call API from backend
+        views/                  # Main interface of the feature
       inventory/
       transaction/
       notification/
@@ -102,7 +111,7 @@ frontend/
 docs/
 ```
 
-## Key Features in Details
+## Key Features
 
 ### Inventory Management
 Provides essential tools to manage and monitor stock accurately across daily operations.
