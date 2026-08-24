@@ -109,6 +109,9 @@ Chatbot-ready mobile UI for future AI-assisted inventory queries and operational
 
 ```text
 .
+├── .agents/                         # Prompts to chatbot agent
+│   ├── skills/
+│   └── AGENTS.md
 ├── backend/
 │   ├── src/
 │   │   ├── app.ts                   # Express app factory and middleware setup
