@@ -1,115 +1,43 @@
-# Smart Retail Store Assistant - Storix
+# Smart Retail Store Assistant — Storix
 
-**Smart Retail Store Assistant (Storix)** is a mobile-first inventory platform for small and medium retail stores.
+**Smart Retail Store Assistant (Storix)** is a mobile-first inventory management platform for small and medium retail stores.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white" alt="Flutter" />
+  <img src="https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white" alt="Dart" />
+  <img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white" alt="AWS" />
+  <img src="https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=white" alt="Terraform" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white" alt="GitHub Actions" />
+</p>
 
 > **Note:** This is an overview README for the project. The source code is not publicly available as this is a closed-source project.
 >
-> <p align="center"><img src="images/private_repo.png" alt="Private Repository" /></p>
+> <img src="images/private-repo.png" width="75%" alt="Private Repository" />
 
-> **Coming Soon:** The app is currently being published to the Google Play Store. We will keep this page updated with the latest news.
->
-> <p align="center"><img src="images/ch_play.jpg" width="40%" alt="Google Play Store" /></p>
+## Why Storix?
 
-## Screenshots
+Managing inventory in small and medium-sized retail stores often involves repetitive data entry, manual stock tracking, and limited visibility into inventory changes.
+
+Storix brings these workflows together in a mobile-first platform, allowing store operators to manage products, track inventory, record stock transactions, and receive alerts from a single application.
+
+By combining barcode-first workflows, automated notifications, inventory insights, and AI-assisted features, Storix aims to make daily inventory operations faster, more consistent, and easier to manage.
+
+## Screenshots / Demo
 
 <p align="center">
-  <img src="images/z7784868406787_c17ccb5bed7b59527d2fdbdfa8febd49.jpg" width="25%" alt="Home Dashboard" />
-  <img src="images/z7784868405398_c5052ba8096454116269e4ab3b94a4fe.jpg" width="25%" alt="Inventory Hub" />
-  <img src="images/z7784868400475_ede42f3cc04b000b54a4d5d09fd5332e.jpg" width="25%" alt="Inventory List" />
-  <img src="images/z7784868408402_d83bfb0f41d7d3e77c9c94fc209035b0.jpg" width="25%" alt="Transaction History" />
-  <img src="images/z7784868414634_b3e07daf49d89d39f8cecb3bdde28348.jpg" width="25%" alt="Notifications" />
-  <img src="images/z7784868418490_c52578dc8e32ef925456c5651567cfb1.jpg" width="25%" alt="Chatbot Assistant" />
+  <img src="images/dashboard.jpg" width="18%" alt="Home Dashboard" />
+  <img src="images/dashboard-2.jpg" width="18%" alt="Home Dashboard 2" />
+  <img src="images/inventory-hub.jpg" width="18%" alt="Inventory Hub" />
+  <img src="images/notifications.jpg" width="18%" alt="Inventory List" />
+  <img src="images/transaction-history.jpg" width="18%" alt="Transaction History" />
+  <img src="images/chatbot.jpg" width="18%" alt="Chatbot" />
+  <img src="images/inventory.jpg" width="18%" alt="Inventory" />
+  <img src="images/product.jpg" width="18%" alt="Product" />
+  <img src="images/restock.jpg" width="18%" alt="Restock" />
 </p>
-
-## Tech Stack
-
-### Frontend
-
-- Flutter
-- Dart
-
-### Backend
-
-- Node.js
-- TypeScript
-- Express.js
-- Prisma ORM
-- PostgreSQL
-- Supabase
-
-### Others
-
-- GitHub Actions
-- Docker
-- Terraform
-- AWS
-- Bash
-
-## Project Structure
-
-```text
-.github/
-  actions/          # Reusable composite GitHub Actions
-  ISSUE_TEMPLATE/   # GitHub issue templates
-  workflows/        # CI/CD pipeline definitions
-backend/
-  src/
-    common/         # Shared utilities, guards, interceptors, and base classes
-    config/
-    cron/           # Scheduled background jobs (e.g. low-stock scans)
-    db/             # Database client initialization and helpers
-    generated/      # Prisma generated support types in typescript
-    modules/
-      auth/
-        controllers/    # Request handlers for auth endpoints
-        modules/        # Feature module definitions and dependency wiring
-        repositories/   # Database access layer for auth entities
-        routes/         # Auth route registration
-        services/       # Business logic for authentication and authorization
-        dtos/           # Data transfer objects for request/response validation
-        types/          # TypeScript types and interfaces for auth domain
-        validators/     # Input validation schemas and rules
-      stores/
-      categories/
-      products/
-      product-packages/
-      inventories/
-      transactions/
-      notification/
-      search/
-      ...
-  prisma/           # Prisma schema and migration files
-  supabase/         # Supabase local config and storage setup
-  terraform/        # Terraform code for AWS infrastructure
-  scripts/          # Deploy scripts & docker swarm yml for EC2 instance
-  README.md
-frontend/
-  lib/
-    core/
-      infrastructure/ # API clients, storage adapters, and service integrations
-      state/          # Global state management providers
-      ui/             # Shared widgets, themes, and design system components
-    features/         # Independent UI features
-      auth/
-        bindings/               # Dependencie inject
-        controllers/            # Handle screen logic
-        models/                 # Private models
-        providers/              # Call API from backend
-        views/                  # Main interface of the feature
-      inventory/
-      transaction/
-      notification/
-      report/
-      search/
-      workspace/
-      ...
-    routes/
-  assets/
-  android/
-  ios/
-  web/
-docs/
-```
 
 ## Key Features
 
@@ -147,100 +75,150 @@ Enhances decision-making with data-driven insights and AI-assisted features.
 - Suggest optimal reorder quantities
 - Identify fast-moving and slow-moving products
 - Provide an inventory insights dashboard
-- LLM-based chatbot that:
-  - Answers inventory-related questions in natural language
-  - Calls backend APIs to execute supported actions
 
-## Setup and Installation
+### Chatbot:
+Chatbot-ready mobile UI for future AI-assisted inventory queries and operational guidance.
 
-### Prerequisites
+- Answers inventory-related questions in natural language.
+- Calls backend APIs to execute supported actions
 
-- Node.js 18+
-- npm
-- Flutter SDK
-- Dart SDK
-- Android Studio or VS Code with Flutter tooling
-- Docker Desktop
+## Tech Stack
 
-### Backend setup
+| Area | Technologies |
+| --- | --- |
+| Mobile | Flutter, Dart |
+| Backend | Node.js, TypeScript, Express.js |
+| ORM | Prisma |
+| Database | PostgreSQL |
+| Backend Services | Supabase |
+| Cache | Redis |
+| Authentication | Supabase Auth |
+| Push Notifications | Firebase Cloud Messaging |
+| Cloud | AWS |
+| Infrastructure | Terraform |
+| CI/CD | GitHub Actions |
+| Others | Bash |
 
-```bash
-cd backend
-npm install
-npx supabase start
-npx supabase status
+## Deployment Infrastructure
+
+<p align="center">
+  <img src="images/infrastructure.jpg" width="75%"/>
+</p>
+
+## Project Structure
+
+```text
+.
+├── backend/
+│   ├── src/
+│   │   ├── app.ts                   # Express app factory and middleware setup
+│   │   ├── server.ts                # HTTP server entry point
+│   │   ├── express.d.ts
+│   │   ├── common/                  # Shared backend utilities
+│   │   ├── config/
+│   │   ├── cron/                    # Scheduled cron jobs for push notification
+│   │   ├── db/                      # Database connection instances
+│   │   ├── lambda/                  # Handlers for Lambda functions
+│   │   └── modules/                 # Feature modules (each follows route → controller → service → repository)
+│   │       ├── alerts/
+│   │       │   ├──controllers/  # Request handlers
+│   │       │   ├──modules/      # Feature module definitions and dependency wiring
+│   │       │   ├──repositories/ # Database access layer
+│   │       │   ├──routes/       # Route registration
+│   │       │   ├──services/     # Business logic
+│   │       │   ├──dtos/         # Data transfer objects for request/response validation
+│   │       │   ├──types/        # TypeScript types and interfaces
+│   │       │   └──validators/   # Input validation schemas and rules
+│   │       ├── audit-log/
+│   │       ├── auth/
+│   │       ├── barcode/
+│   │       ├── categories/
+│   │       ├── chat-bot/
+│   │       └── ...
+│   ├── prisma/                      # Prisma data model definitions
+│   ├── supabase/                    # Supabase local development configuration
+│   ├── tests/                       # Unit tests and intergration tests for backend modules
+│   ├── Dockerfile                   # Docker image for EC2/container deployment
+│   ├── Dockerfile.lambda            # Docker image optimized for AWS Lambda deployment
+│   ├── package-lock.json
+│   ├── package.json
+│   └── tsconfig.json
+│
+├── frontend/
+│   ├── lib/
+│   │   ├── main.dart                # App entry point and initialization
+│   │   ├── firebase_options.dart
+│   │   ├── core/                    # Shared infrastructure used across all features
+│   │   │   ├── infrastructure/
+│   │   │   ├── state/ 
+│   │   │   └── ui/
+│   │   ├── features/                # Self-contained feature modules
+│   │   │   ├── auth/
+│   │   │   │   ├── bindings/    # Dependencie inject
+│   │   │   │   ├── controllers/ # Handle screen logic
+│   │   │   │   ├── models/      # Private models
+│   │   │   │   ├── providers/   # Call API from backend
+│   │   │   │   └── views/       # Main interface of the feature
+│   │   │   ├── home/
+│   │   │   ├── inventory/
+│   │   │   ├── navigation/
+│   │   │   ├── notification/
+│   │   │   ├── transaction/
+│   │   │   └── ...
+│   │   └── routes/
+│   ├── assets/
+│   ├── android/
+│   ├── ios/
+│   ├── web/
+│   ├── linux/
+│   ├── macos/
+│   ├── windows/
+│   └── test/
+│
+├── terraform/                       # Infrastructure as Code (AWS)
+│   ├── environments/                # Infrastructure environments
+│   │   ├── production/
+│   │   └── staging/
+│   └── modules/                     # Reusable Terraform modules
+│       ├── api_gateway/
+│       ├── cloudwatch/
+│       ├── ec2/
+│       ├── ecr/
+│       ├── event_bridge/
+│       ├── iam/
+│       ├── lambda/
+│       ├── networking/
+│       ├── route53/
+│       ├── s3/
+│       ├── sqs/
+│       └── ssm_parameter/
+│
+├── opt-sis/                         # Self-hosted / on-premise deployment configuration
+│   ├── nginx/
+│   ├── scripts/
+│   └── stacks/
+│
+└── .github/                         # GitHub Actions CI/CD configuration
+    ├── workflows/
+    │   ├── ci-backend.yml
+    │   ├── ci-frontend.yml
+    │   ├── cd-backend-ec2.yml
+    │   ├── cd-backend-lambda.yml
+    │   ├── backup.yml
+    │   └── database-keep-alive.yml
+    ├── actions/
+    ├── ISSUE_TEMPLATE/
+    └── CODEOWNERS
 ```
 
-If you want push notifications in local development, place `serviceAccountKey.json` in the `backend/` directory for Firebase Admin initialization.
+## Engineering Highlights
 
-Run database setup:
-
-```bash
-cd backend
-npx prisma migrate dev
-npx prisma generate
-```
-
-Start the backend:
-
-```bash
-cd backend
-npm run dev
-```
-
-The server starts on `http://localhost:3000` and exposes a health check at `/api/health`.
-
-### Frontend setup
-
-```bash
-cd frontend
-flutter pub get
-```
-
-The frontend reads runtime configuration from compile-time Dart defines rather than a checked-in `.env` file. Start the app with values that match your environment:
-
-```bash
-cd frontend
-flutter run ^
-  --dart-define=API_BASE_URL=http://10.0.2.2:3000 ^
-  --dart-define=SUPABASE_URL=http://10.0.2.2:54321 ^
-  --dart-define=SUPABASE_ANON_KEY=<publishable_key_from_supabase_status>
-```
-
-Notes:
-
-- `10.0.2.2` is appropriate for the Android emulator. Use your machine IP or `localhost` depending on the target platform.
-- Firebase is initialized in the app, so platform-specific Firebase configuration must also be valid if notification features are enabled.
-
-### Development workflow
-
-Start both applications in separate terminals:
-
-```bash
-cd backend
-npm run dev
-```
-
-```bash
-cd frontend
-flutter run --dart-define=API_BASE_URL=http://10.0.2.2:3000 --dart-define=SUPABASE_URL=http://10.0.2.2:54321 --dart-define=SUPABASE_ANON_KEY=<publishable_key_from_supabase_status>
-```
-
-## Environment Variables
-
-### Backend
-
-| Variable | Required | Purpose |
-| --- | --- | --- |
-| `DATABASE_URL` | Yes | PostgreSQL connection string used by Prisma |
-| `SUPABASE_URL` | Yes | Supabase project/local API URL |
-| `SUPABASE_SERVICE_ROLE_KEY` | Yes | Backend admin access for storage and protected Supabase operations |
-| `SUPABASE_ANON_KEY` | Recommended | Useful for local setup parity and shared Supabase configuration |
-| `STORAGE_BUCKET` | No | Supabase storage bucket subfoler name for product images, defaults to `images` |
-| `NODE_ENV` | No | Logging/runtime mode |
-
-## Notes
-
-- Storix is built for retail inventory support, especially stores that need fast daily operations on mobile devices.
-- Smart features in this project are designed to assist store decisions through automation, alerts, and guided workflows rather than replace business rules.
-- The backend remains the source of truth for validation, authorization, store scoping, and inventory consistency.
+- Modular backend architecture with separated
+  route, controller, service, and repository layers
+- Type-safe backend development with strict TypeScript
+- Prisma-based data access with PostgreSQL
+- Barcode-first product workflows with API response caching
+- Role-based store access control
+- Infrastructure managed through Terraform
+- Automated CI/CD with GitHub Actions
+- Cloud-native deployment using AWS services
