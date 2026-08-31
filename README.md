@@ -15,7 +15,7 @@
 
 > **Note:** This is an overview README for the project. The source code is not publicly available as this is a closed-source project.
 >
-> <img src="images/private-repo.png" width="75%" alt="Private Repository" />
+> <img src="images/private-repo.png" alt="Private Repository" />
 
 ## Why Storix?
 
