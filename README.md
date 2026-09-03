@@ -1,6 +1,16 @@
 # Smart Retail Store Assistant — Storix
 
+<p align="right">
+  🇬🇧 English | <a href="README.vi.md">🇻🇳 Tiếng Việt</a>
+</p>
+
 **Smart Retail Store Assistant (Storix)** is a mobile-first inventory management platform for small and medium retail stores.
+
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=com.fourmonkeysstudio.storix">
+    <img src="https://img.shields.io/badge/Google_Play-Storix-0F9D58?logo=googleplay&logoColor=green"/>
+  </a>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white" alt="Flutter" />
